@@ -4,3 +4,5 @@ target/
 .vscode/
 .DS_Store
 application-local.properties
+lib/
+out/
