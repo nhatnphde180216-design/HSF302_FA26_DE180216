@@ -1,6 +1,10 @@
 target/
+**/target/
 .idea/
+**/.idea/
 *.iml
+**/*.iml
 .vscode/
+**/.vscode/
 .DS_Store
 application-local.properties

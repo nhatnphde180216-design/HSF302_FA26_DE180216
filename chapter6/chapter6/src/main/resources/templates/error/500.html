@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::section})}">
+<head>
+    <title>500 - Lỗi hệ thống</title>
+</head>
+<body>
+<section>
+    <div class="row justify-content-center text-center my-5">
+        <div class="col-md-6">
+            <h1 class="display-1 fw-bold text-danger">500</h1>
+            <h3 class="mb-3">Đã xảy ra lỗi máy chủ nội bộ</h3>
+            <p class="text-muted mb-4">Hệ thống đang gặp sự cố khi xử lý yêu cầu. Vui lòng thử lại sau.</p>
+            <a th:href="@{/students}" class="btn btn-primary">
+                <i class="bi bi-house-door me-1"></i> Quay về trang chủ
+            </a>
+        </div>
+    </div>
+</section>
+</body>
+</html>
