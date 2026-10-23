@@ -37,16 +37,19 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
+    // Lưu sinh viên: id == null thi insert moi, id != null thi cap nhat
     @Transactional
     public Student save(Student student) {
         return studentRepository.save(student);
     }
 
+    // Xoa sinh vien theo id
     @Transactional
     public void deleteById(Long id) {
         studentRepository.deleteById(id);
     }
 
+    // Kiem tra ma sinh vien bi trung lap (loai tru id hien tai neu dang cap nhat)
     public boolean isStudentCodeDuplicated(String code, Long excludeId) {
         if (code == null || code.isBlank()) return false;
         String c = code.trim();
