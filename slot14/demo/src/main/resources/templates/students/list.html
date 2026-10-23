@@ -14,7 +14,7 @@
         <a th:href="@{/students/new}" class="btn btn-primary">+ Thêm sinh viên</a>
     </div>
 
-    <!-- Form tìm kiếm -->
+    <!-- TODO 9: Form tim kiem GET toi /students -->
     <form th:action="@{/students}" method="get" class="row g-2 mb-3">
         <div class="col-md-6">
             <input type="text" name="keyword" class="form-control"
@@ -29,12 +29,13 @@
         </div>
     </form>
 
+    <!-- Thong bao ket qua tim kiem bang literal substitution |...| -->
     <div th:if="${keyword != null and !#strings.isEmpty(keyword)}" class="mb-2 text-muted">
         Tìm thấy <strong th:text="${totalStudents}">0</strong> sinh viên cho từ khóa:
         <strong th:text="|'${keyword}'|">'...'</strong>
     </div>
 
-    <!-- 3 thẻ thống kê -->
+    <!-- TODO 10: 3 the thong ke (totalStudents, avgGpa, dang hoc) -->
     <div class="row g-3 mb-4">
         <div class="col-md-4">
             <div class="card stat-card text-bg-primary">
