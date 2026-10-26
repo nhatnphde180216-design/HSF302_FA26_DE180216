@@ -33,7 +33,7 @@ public class StudentController {
         return majors;
     }
 
-    // TODO 4: GET /students
+    // TODO 4: GET /students (tim kiem keyword, thong ke totalStudents, avgGpa, activeMenu)
     @GetMapping
     public String list(@RequestParam(required = false) String keyword, Model model) {
         List<Student> students = studentService.search(keyword);
