@@ -63,12 +63,12 @@
         </div>
     </div>
 
-    <!-- Danh sách rỗng -->
+    <!-- TODO 13.1: Thong bao khi danh sach rong -->
     <div th:if="${#lists.isEmpty(students)}" class="alert alert-warning">
         Không có sinh viên nào.
     </div>
 
-    <!-- Bảng danh sách -->
+    <!-- Bang danh sach sinh vien -->
     <div class="table-responsive" th:unless="${#lists.isEmpty(students)}">
         <table class="table table-bordered table-hover align-middle bg-white">
             <thead class="table-dark">
@@ -87,6 +87,8 @@
             </tr>
             </thead>
             <tbody>
+            <!-- TODO 11: th:each lap danh sach voi iterStat, format ngay/gpa, in hoa ho ten -->
+            <!-- TODO 12: tra Map majors, switch xep loai, ternary trang thai, table-danger khi gpa lt 5 -->
             <tr th:each="s, stat : ${students}"
                 th:classappend="${s.gpa lt 5} ? 'table-danger'">
                 <td th:text="${stat.count}">1</td>
@@ -112,11 +114,12 @@
                         Đang học
                     </span>
                 </td>
-                <td>
+                <!-- TODO 13.2: Cac nut thao tac Xem, Sua, Xoa -->
+                <td class="text-nowrap">
                     <a th:href="@{/students/{id}(id=${s.id})}" class="btn btn-sm btn-outline-info">Xem</a>
                     <a th:href="@{/students/{id}/edit(id=${s.id})}" class="btn btn-sm btn-outline-warning">Sửa</a>
                     <form th:action="@{/students/{id}/delete(id=${s.id})}" method="post" class="d-inline"
-                          onsubmit="return confirm('Xóa sinh viên này?')">
+                          onsubmit="return confirm('Bạn chắc chắn muốn xóa sinh viên này?');">
                         <button type="submit" class="btn btn-sm btn-outline-danger">Xóa</button>
                     </form>
                 </td>
