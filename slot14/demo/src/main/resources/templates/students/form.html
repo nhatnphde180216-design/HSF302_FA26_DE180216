@@ -13,25 +13,24 @@
             <div class="card shadow-sm">
                 <div class="card-header">
                     <h4 class="mb-0"
-                        th:text="${student.id == null} ? 'Thêm sinh viên mới' : 'Cập nhật sinh viên'">
+                        th:text="${student.id == null} ? 'Thêm sinh viên mới'
+                                 : 'Cập nhật sinh viên: ' + ${student.studentCode}">
                         Thêm sinh viên mới
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form th:action="@{/students/save}"
-                          th:object="${student}"
-                          method="post"
-                          novalidate>
 
-                        <!-- Hidden id -->
+                    <!-- 15.3 -->
+                    <form th:action="@{/students/save}" th:object="${student}" method="post" novalidate>
+
+                        <!-- 15.4 -->
                         <input type="hidden" th:field="*{id}">
 
-                        <!-- Tổng hợp lỗi -->
-                        <div th:if="${#fields.hasErrors('*')}"
-                             class="alert alert-danger mb-3">
-                            <strong>Vui lòng kiểm tra lại:</strong>
-                            <ul class="mb-0 mt-1">
-                                <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+                        <!-- 16.1 -->
+                        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                            <strong>Vui lòng sửa các lỗi sau:</strong>
+                            <ul class="mb-0">
+                                <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Lỗi</li>
                             </ul>
                         </div>
 
