@@ -3,16 +3,6 @@
 A multi-module JavaFX + Spring Data JPA application for managing student records.  
 Built with **Spring Boot 4.1.1**, **JavaFX 21**, and **SQL Server**.
 
----
-
-## Environment Requirements
-
-| Tool | Version |
-|------|---------|
-| JDK  | 21 |
-| Maven | 3.9+ |
-| SQL Server | 2019+ (or Azure SQL) |
-| JavaFX SDK | 21 (bundled via `javafx-maven-plugin`) |
 
 ---
 
